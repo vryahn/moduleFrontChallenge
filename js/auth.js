@@ -11,7 +11,7 @@ loginButton.addEventListener("click", (e) => {
 
   fetch("http://localhost:8001/users/auth", {
     method: "POST",
-    headers: { "Content-Type": "applicaction/json" }, //que tipo de paquete vamos a enviar
+    headers: { "Content-Type": "application/json" }, //que tipo de paquete vamos a enviar
     body: JSON.stringify(dataLogin),
   })
     .then((res) => {
