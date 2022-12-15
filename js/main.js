@@ -2,6 +2,7 @@ import db from "./environment.js";
 import { removePostMethod } from "./removePost.js";
 // import { idFunction } from "./create-post-detail.js";
 const cardsContainer = document.querySelector("#cardsContainer");
+import { tokenAuth } from "./auth.js";
 
 // Botón y evento ordenar por fecha
 
@@ -20,8 +21,9 @@ orderButton.addEventListener("click", (e) => {
 // Método Get All Posts
 
 const getAllPosts = () => {
-  fetch(db + ".json", {
+  fetch(db + "/post", {
     method: "GET",
+    "authorize": "Bearer "+tokenAuth
   })
     .then((response) => response.json())
     .then((result) => {
