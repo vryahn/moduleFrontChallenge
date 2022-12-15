@@ -1,8 +1,7 @@
 import db from "./environment.js";
 import { removePostMethod } from "./removePost.js";
 const cardsContainer = document.querySelector("#cardsContainer");
-/* const tokenAuth = JSON.parse(localStorage.getItem("usuario")); */
-
+const tokenAuth = JSON.parse(localStorage.getItem("usuario"));
 
 // Botón y evento ordenar por fecha
 
@@ -21,11 +20,10 @@ orderButton.addEventListener("click", (e) => {
 
 const getAllPosts = () => {
   fetch(db + "/post", {
-    method: "GET",
-    /* authorize: "Bearer " + tokenAuth, */
+    authorize: "Bearer " + tokenAuth,
   })
     .then((response) => response.json())
-    .then(( result) => {
+    .then((result) => {
       const datos = result.payload;
       if (descendingOrder == true) {
         datos.forEach((dato) => {
@@ -37,7 +35,7 @@ const getAllPosts = () => {
             dato.img,
             dato.creationDate,
             dato.tags,
-            dato.id
+            dato._id
           );
           cardsContainer.appendChild(card);
         });
@@ -51,8 +49,8 @@ const getAllPosts = () => {
             dato.img,
             dato.creationDate,
             dato.tags,
-            dato.id
-          );        
+            dato._id
+          );
           cardsContainer.appendChild(card);
         });
       }
@@ -73,9 +71,7 @@ getAllPosts(descendingOrder); // Mandamos llamar al método getAllPosts quien ob
       const datos = result.payload; */
 
 const getAPosts = (db, id) => {
-  fetch(db + "/" + id + ".json", {
-    method: "GET",
-  })
+  fetch(db + "/post/" + id, {})
     .then((response) => response.json())
     .then((result) => console.log(result))
     .catch((err) => console.log(err));
@@ -101,7 +97,6 @@ const cardCreation = (
 
   const cardBody = document.createElement("div"); // Este es el div del cuerpo de la card
   cardBody.classList.add("card-body");
-  cardBody.setAttribute("onclick", "window.location.href='./post.html'");
   // cardBody.setAttribute("onclick", idFunction(id));
 
   const creationDate = document.createElement("p"); // Fecha de creación del post
@@ -110,6 +105,7 @@ const cardCreation = (
 
   const name = document.createElement("h5"); // Título del post
   name.classList.add("h5", "card-title");
+  name.setAttribute("onclick", "window.location.href='./post.html'");
   name.innerHTML = "<strong>" + nombre + "</strong>";
 
   const tagsArray = document.createElement("div");
@@ -148,9 +144,9 @@ const cardCreation = (
   return card;
 };
 
-// Filtrado
+// Filtrado, en proceso
 
-const getByMonth = (mes) => {
+/* const getByMonth = (mes) => {
   fetch(db + ".json", {
     method: "GET",
   })
@@ -193,3 +189,4 @@ const getByMonth = (mes) => {
       }
     });
 };
+ */
