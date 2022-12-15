@@ -1,3 +1,3 @@
-const db = "https://to-do-list-dc76a-default-rtdb.firebaseio.com/to-do-list";
+const db = "https://localhost:8001";
 
 export default db;

@@ -20,7 +20,7 @@ newPostBtn.addEventListener('click',(e)=>{
   };
   fetch(db+".json",{
     method: 'POST', 
-    headers: {"Content-Type": "applicaction/json"}, //que tipo de paquete vamos a enviar
+    headers: {"Content-Type": "application/json"}, //que tipo de paquete vamos a enviar
     body:JSON.stringify(newPost),
   }).then((res)=>{
     window.location.replace('./index.html');
