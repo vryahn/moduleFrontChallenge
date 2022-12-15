@@ -11,7 +11,6 @@ let descendingOrder = true;
 
 orderButton.addEventListener("click", (e) => {
   e.preventDefault();
-  console.log("boton activado");
   descendingOrder = !descendingOrder;
   cardsContainer.innerHTML = "";
   getAllPosts();
@@ -32,13 +31,13 @@ const getAllPosts = () => {
         datos.forEach((dato) => {
           const date = new Date(dato.fecha);
           let month = date.getMonth();
-          console.log(month);
           const card = cardCreation(
             dato.tittle,
-            dato._id,
+            dato.content,
             dato.img,
             dato.creationDate,
-            dato.content
+            dato.tags,
+            dato.id
           );
           cardsContainer.appendChild(card);
         });
@@ -46,14 +45,14 @@ const getAllPosts = () => {
         datos.reverse().forEach((dato) => {
           const date = new Date(dato.fecha);
           let month = date.getMonth();
-          console.log(month);
           const card = cardCreation(
             dato.tittle,
-            dato._id,
+            dato.content,
             dato.img,
             dato.creationDate,
-            dato.content
-          );
+            dato.tags,
+            dato.id
+          );        
           cardsContainer.appendChild(card);
         });
       }
@@ -143,6 +142,7 @@ const cardCreation = (
   cardBody.appendChild(tagsArray);
   if (etiquetas != null) tagsArray.appendChild(tags);
   // cardBody.appendChild(editButton);
+  cardBody.appendChild(description);
   cardBody.appendChild(deleteButton);
   card.appendChild(cardBody);
   return card;
