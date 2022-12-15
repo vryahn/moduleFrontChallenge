@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+      <!-- NAVBAR -->
+      <nav
+      class="navbar sticky-top container-fluid row-md"
+      style="background-color: #F5F5F5"
+      ;
+      >
+      <div class="container-md d-flex justify-content-between">
+        <!-- Logo y search bar se colocan a la izquierda -->
+        <div class="d-flex">
+          <div class="me-3">
+            <div class="div div__container-img d-flex align-items-center">
+            <div class="div div__menu-burguer mx-3 d-block d-md-none">
+              <a class="" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" role="img" aria-labelledby="a3uzztorovwykeessr6lbtvkxzautcfm" class="crayons-icon"><title id="a3uzztorovwykeessr6lbtvkxzautcfm">Navigation menu</title>
+                  <path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"></path>
+              </svg>
+              </a>
+            </div>
+              <a class="navbar-brand" href="./index.html">
+                <img
+                width="50" height="40" viewBox="0 0 44 44" role="img"
+                class="div__nav-menu img__devto-logo"
+                src="./assets/resized_logo_UQww2soKuUsjaOGNB38o.png"
+                alt=""
+                />
+              </a>
+            </div>
+          </div>
+          <div class="container text-start col align-items-start">
+            <form class="form__navbar" action="">
+              <div class="input-group">
+                <input
+                type="text"
+                class="d-none d-sm-none d-md-none d-lg-block form-control input__loupe-control"
+                placeholder="Search..."
+                />
+                <button class="d-none d-sm-none d-md-none d-lg-block btn btn-search" type="button">
+                  <img width="20" src="/assets/loupe.svg" alt="" />
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- create-post button, bell and avatar are placed to the right -->
+        <div class="d-flex align-items-center gap-3 dropdown">
+          <button onclick="window.location.href='./login.html'" class="d-none d-sm-none d-md-none d-lg-block btn btn-purple btn-outline-purple fw-bold" type="button">
+            Login
+          </button>
+          <button onclick="window.location.href='./create-post.html'" class="d-none d-sm-none d-md-none d-lg-block btn btn-purple btn-outline-purple fw-bold" type="button">
+            Create account
+          </button>
+          <button class="d-md-block d-lg-none btn btn-search" type="button">
+            <img width="20" src="/assets/loupe.svg" alt="" />
+          </button>
+          <svg class= "bell__notification-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img" aria-labelledby="agdk31akwd0wvega671bi3rc07bwke7d" class="crayons-icon"><title id="agdk31akwd0wvega671bi3rc07bwke7d">Notifications</title>
+            <path d="M20 17h2v2H2v-2h2v-7a8 8 0 1116 0v7zm-2 0v-7a6 6 0 10-12 0v7h12zm-9 4h6v2H9v-2z"></path>
+        </svg>
+      </div>
+    </div>
+    </nav>
+
+    <!-- Start login -->
+    <div class="vh-100 d-flex justify-content-center align-items-center">
+      <div class="col-md-4 p-5 shadow-sm border rounded-3">
+        <h2 class="text-center mb-4 text-dark">Welcome to DEV Community 👩‍💻👨‍💻</h2>
+        <p>DEV Community 👩‍💻👨‍💻 is a community of 971,469 amazing developers</p>
+        <form>
+          <div class="mb-3">
+            <label for="inputEmail" class="form-label"
+              >Email</label
+            >
+            <input
+              type="email"
+              class="form-control border border-primary"
+              id="inputEmail"
+              aria-describedby="emailHelp"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="inputPassword" class="form-label"
+              >Password</label
+            >
+            <input
+              type="password"
+              class="form-control border border-primary"
+              id="inputPassword"
+            />
+          </div>
+          <div class="d-grid">
+            <button class="btn btn-primary" type="submit" id="loginButton">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+        <!-- FOOTER -->
+        <div
+        class="card__footer col-12 py-5 px-0 card-footer-container text-muted text-xs mt-4" style="background-color: #F5F5F5"
+        >
+        <p class="card-footer__description text-center">
+          <a class="" href="/">DEV Community 👩‍💻👨‍💻</a> — A constructive and
+          inclusive social network for software developers. With you every step of
+          your journey.
+        </p>
+        <div class="fs-s text-center">
+          <p>
+            Built on <a class="" href="https://www.forem.com">Forem</a> — the
+            <a class="" href="https://dev.to/t/opensource">open source</a>
+            software that powers <a class="" href="https://dev.to">DEV</a> and
+            other inclusive communities.
+          </p>
+          <p>
+            Made with love and
+            <a class="" href="https://dev.to/t/rails">Ruby on Rails</a>. DEV
+            Community 👩‍💻👨‍💻 <span title="copyright">©</span> 2016 - 2022.
+          </p>
+        </div>
+        <div
+        class="footer_logo d-flex justify-content-center align-content-center"
+        >
+        <a href="https://www.forem.com" class=" "
+        ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        class=""
+        >
+        <title>Forem logo</title>
+        <g clip-path="url(#clip0)" fill="#1AB3A6">
+          <path
+          d="M4.603 1.438a8.056 8.056 0 017.643 5.478 8.543 8.543 0 00-3.023 5.968H8.054C3.606 12.884 0 9.296 0 4.87V1.468a.03.03 0 01.03-.03h4.573zM23.97 6.515a.03.03 0 01.03.03v2.833c0 4.11-3.354 7.442-7.491 7.442h-2.881v5.726h-2.305V14.53l.022-1.145c.294-3.843 3.526-6.87 7.469-6.87h5.155z"
+          ></path>
+        </g>
+        <defs>
+          <clipPath id="clip0">
+            <path fill="#fff" d="M0 0h24v24H0z"></path>
+          </clipPath>
+        </defs>
+      </svg>
+    </a>
+    </div>
+    </div>
+
+  </body>
+  <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+    <script src="auth.js"></script>
+</html>
