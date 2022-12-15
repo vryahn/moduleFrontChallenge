@@ -1,7 +1,9 @@
 import db from "./environment.js";
 import { removePostMethod } from "./removePost.js";
 const cardsContainer = document.querySelector("#cardsContainer");
-const tokenAuth = JSON.parse(localStorage.getItem("usuario"));
+/* const tokenAuth = JSON.parse(localStorage.getItem("usuario")); */
+
+
 // Botón y evento ordenar por fecha
 
 const orderButton = document.querySelector("#orderByButton");
@@ -21,12 +23,11 @@ orderButton.addEventListener("click", (e) => {
 const getAllPosts = () => {
   fetch(db + "/post", {
     method: "GET",
-    authorize: "Bearer " + tokenAuth,
+    /* authorize: "Bearer " + tokenAuth, */
   })
     .then((response) => response.json())
-    .then((result) => {
+    .then(( result) => {
       const datos = result.payload;
-      console.log(datos);
       if (descendingOrder == true) {
         datos.forEach((dato) => {
           const date = new Date(dato.fecha);
@@ -41,33 +42,20 @@ const getAllPosts = () => {
           );
           cardsContainer.appendChild(card);
         });
-        for (const post in datos.reverse()) {
-          const date = new Date(post.fecha);
-          let month = date.getMonth();
-          console.log(month);
-          const card = cardCreation(
-            post.title,
-            post.content,
-            post.img,
-            post.creationDate,
-            post._id
-          );
-          cardsContainer.appendChild(card);
-        }
       } else {
-        for (const post of datos) {
-          const date = new Date(post.fecha);
+        datos.reverse().forEach((dato) => {
+          const date = new Date(dato.fecha);
           let month = date.getMonth();
           console.log(month);
           const card = cardCreation(
-            post.title,
-            post.description,
-            post.image,
-            post.fecha,
-            post._id
+            dato.tittle,
+            dato._id,
+            dato.img,
+            dato.creationDate,
+            dato.content
           );
           cardsContainer.appendChild(card);
-        }
+        });
       }
     });
 };
@@ -75,6 +63,15 @@ const getAllPosts = () => {
 getAllPosts(descendingOrder); // Mandamos llamar al método getAllPosts quien obtiene los datos de firebase y los usa para construir las cards mediante cardCreation
 
 // Metodo Get a Post (obteniendo la info de un solo post)
+
+/* const getAPosts = () => {
+  fetch(db + "/post", {
+    method: "GET",
+    authorize: "Bearer " + tokenAuth,
+  })
+    .then((response) => response.json())
+    .then(( result) => {
+      const datos = result.payload; */
 
 const getAPosts = (db, id) => {
   fetch(db + "/" + id + ".json", {

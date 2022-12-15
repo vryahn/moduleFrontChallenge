@@ -23,7 +23,7 @@ loginButton.addEventListener("click", (e) => {
     })
     .then((data) => {
       console.log("recibi estos datos", data);
-      tokenAuth = data.payload;
+      /* localStorage.setItem("usuario", JSON.stringify(data.payload)); */
       window.location.replace('./index.html');
     })
     .catch((err) => {
