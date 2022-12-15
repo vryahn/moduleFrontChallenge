@@ -1,10 +1,7 @@
 import db from "./environment.js";
 import { removePostMethod } from "./removePost.js";
-// import { idFunction } from "./create-post-detail.js";
 const cardsContainer = document.querySelector("#cardsContainer");
-import { tokenAuth } from "./auth.js";
-console.log("Este es el token: "+tokenAuth);
-
+const tokenAuth = JSON.parse(localStorage.getItem("usuario"));
 // Botón y evento ordenar por fecha
 
 const orderButton = document.querySelector("#orderByButton");
@@ -24,24 +21,28 @@ orderButton.addEventListener("click", (e) => {
 const getAllPosts = () => {
   fetch(db + "/post", {
     method: "GET",
-    "authorize": "Bearer "+tokenAuth
+    authorize: "Bearer " + tokenAuth,
   })
     .then((response) => response.json())
     .then((result) => {
-      const keys = Object.keys(result);
-      const allPostsArray = keys.reduce((prev, act) => {
-        const postAct = result[act];
-        const postCompleto = {
-          id: act,
-          ...postAct,
-        };
-        prev.push(postCompleto);
-        return prev;
-      }, []);
-      console.log(allPostsArray);
+      const datos = result.payload;
+      console.log(datos);
       if (descendingOrder == true) {
-        for (const post of allPostsArray.reverse()) {
-          const date=  new Date(post.fecha)
+        datos.forEach((dato) => {
+          const date = new Date(dato.fecha);
+          let month = date.getMonth();
+          console.log(month);
+          const card = cardCreation(
+            dato.tittle,
+            dato._id,
+            dato.img,
+            dato.creationDate,
+            dato.content
+          );
+          cardsContainer.appendChild(card);
+        });
+        for (const post in datos.reverse()) {
+          const date = new Date(post.fecha);
           let month = date.getMonth();
           console.log(month);
           const card = cardCreation(
@@ -49,14 +50,13 @@ const getAllPosts = () => {
             post.content,
             post.img,
             post.creationDate,
-            post.tags,
             post._id
           );
           cardsContainer.appendChild(card);
         }
       } else {
-        for (const post of allPostsArray) {
-          const date=  new Date(post.fecha)
+        for (const post of datos) {
+          const date = new Date(post.fecha);
           let month = date.getMonth();
           console.log(month);
           const card = cardCreation(
@@ -64,7 +64,6 @@ const getAllPosts = () => {
             post.description,
             post.image,
             post.fecha,
-            post.tag,
             post._id
           );
           cardsContainer.appendChild(card);
