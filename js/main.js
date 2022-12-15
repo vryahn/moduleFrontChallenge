@@ -3,6 +3,7 @@ import { removePostMethod } from "./removePost.js";
 // import { idFunction } from "./create-post-detail.js";
 const cardsContainer = document.querySelector("#cardsContainer");
 import { tokenAuth } from "./auth.js";
+console.log("Este es el token: "+tokenAuth);
 
 // Botón y evento ordenar por fecha
 
@@ -45,11 +46,11 @@ const getAllPosts = () => {
           console.log(month);
           const card = cardCreation(
             post.title,
-            post.description,
-            post.image,
-            post.fecha,
-            post.tag,
-            post.id
+            post.content,
+            post.img,
+            post.creationDate,
+            post.tags,
+            post._id
           );
           cardsContainer.appendChild(card);
         }
@@ -64,7 +65,7 @@ const getAllPosts = () => {
             post.image,
             post.fecha,
             post.tag,
-            post.id
+            post._id
           );
           cardsContainer.appendChild(card);
         }

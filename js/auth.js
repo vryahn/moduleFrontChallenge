@@ -9,9 +9,6 @@ loginButton.addEventListener("click", (e) => {
     email: user.value,
     password: password.value,
   };
-
-
-
   fetch("http://localhost:8001/users/auth", {
     method: "POST",
     headers: { "Content-Type": "application/json"}, //que tipo de paquete vamos a enviar
@@ -27,6 +24,7 @@ loginButton.addEventListener("click", (e) => {
     .then((data) => {
       console.log("recibi estos datos", data);
       tokenAuth = data.payload;
+      window.location.replace('./index.html');
     })
     .catch((err) => {
       console.error("ocurrio un error", err);
@@ -51,5 +49,3 @@ loginButton.addEventListener("click", (e) => {
   
   const token = ""
  */
-
-  module.export;
