@@ -1,7 +1,7 @@
 import db from "./environment.js";
 import { removePostMethod } from "./removePost.js";
 const cardsContainer = document.querySelector("#cardsContainer");
-const tokenAuth = JSON.parse(localStorage.getItem("usuario"));
+const tokenAuth = JSON.parse(localStorage.getItem("token"));
 
 // Botón y evento ordenar por fecha
 
