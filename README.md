@@ -8,12 +8,14 @@
 
 ### Información General
 ***
-El proyecto radica en darle funcionalidad a lo que fué en su momento el proyecto de maquetado: permite la creación de nuevos post así como su edición y eliminación, guardando dichos post en una base de datos no relacional.
+Tras arduos esfuerzos el módulo de Backend ha finalizado. Contra todo pronóstico seguimos aquí, dándolo todo. En esta ocasión este repositorio contiene el cascarón, diseñado para consumir lo mero bueno, allá donde las papas queman... el backend. Pero esto es lo bonito, aquí donde el usuario mira y el cliente compra. El backend nadie lo mira, con que sirva esta bien. Jaja salu2
+
 ## Tecnologías
 ***
 ![Image text](https://programacion.net/files/article/20170217100222_javascript.png)
 * JavaScript (principal)
 * HTML, CSS, SASS, Bootstrap (secundarios... en esta ocasión)
+* NodeJS, Express, Mongo DB y otras weas (pero no en este repo, obvi)
 
 ## Criterios de Aceptación
 ***
@@ -24,14 +26,9 @@ Para el desafío del módulo de JavaScript se deberá considerar lo siguiente:
 * Eliminar
 * Obtener el detalle de un post
 * Obtener todos los posts
-2. Permitir los siguientes tipos de filtrado:
-* Por fecha (semana, mes, año)
-* Pestañas Latest, Week, Month, Year
-* Búsqueda por título de post
-3. Crear una BD en firebase para la persistencia de los posts
-4. Peticiones AJAX (API Fetch)
-5. Se deberá crear un repositorio Github por equipo
-6. Deploy en Vercel o Github Pages
+2. Integración con un backend local, corriendo en la maquinita del propio usuario, porque hay que ser humildes.
+3. Peticiones AJAX (API Fetch) consumiendo los endpoints de nuestro backend
+4. Deploy en Vercel o Github Pages
 
 ## Innovacarb Dev
 ***
