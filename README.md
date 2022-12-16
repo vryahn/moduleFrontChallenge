@@ -8,7 +8,7 @@
 
 ### Información General
 ***
-El proyecto radica en darle funcionalidad a lo que fué en su momento el proyecto de maquetado: permite la creación de nuevos post así como su edición y eliminación, guardando dichos post en una base de datos no relacional.
+El proyecto radica en darle funcionalidad a lo que fue en su momento el proyecto de maquetado: permite la creación de nuevos post así como su edición y eliminación, guardando dichos post en una base de datos no relacional.
 ## Tecnologías
 ***
 ![Image text](https://programacion.net/files/article/20170217100222_javascript.png)
