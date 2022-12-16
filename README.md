@@ -19,7 +19,7 @@ Tras arduos esfuerzos el módulo de Backend ha finalizado. Contra todo pronósti
 
 ## Criterios de Aceptación
 ***
-Para el desafío del módulo de JavaScript se deberá considerar lo siguiente:
+En este repo ninguno, nomas es pa presumir jaja salu2, pero bueno igual andamos integrando:
 1. Permitir la gestión de Post (artículos)
 * Crear
 * Actualizar
@@ -38,6 +38,5 @@ Para el desafío del módulo de JavaScript se deberá considerar lo siguiente:
 * Vryahn
 
 ## Links
-* Notion: https://innovacarbdev.notion.site/Reto-de-JavaScript-25aed06539cc42c0aa454f150e2e6506
-* Prezzi: https://prezi.com/view/V4FB2w6IxMqrVFsnqXSk/
-* Vercel Deployment: https://dev-to-her6ny8d2-abrahamfigueroa.vercel.app/
+* Notion: https://www.notion.so/innovacarbdev/9281132b295349808291a2cc182b72f1?v=c5e33fb69c324a75a0df7c7c994b5a93
+* Prezzi: Próximamente
