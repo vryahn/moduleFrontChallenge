@@ -15,11 +15,11 @@ loginButton.addEventListener("click", (e) => {
     body: JSON.stringify(dataLogin),
   })
     .then((res) => {
-      console.log(res);
-      if (res.status != 200) {
-        throw new Error("a chuchita la bolsearon");
-      }
-      return res.json(); //return devuelve el metodo json y ese metodo intenta leer el contenido de la respuesta
+      // console.log(res);
+      // if (res.status != 200) {
+      //   throw new Error("a chuchita la bolsearon");
+      // }
+      // return res.json(); //return devuelve el metodo json y ese metodo intenta leer el contenido de la respuesta
     })
     .then((data) => {
       console.log("recibi estos datos", data);

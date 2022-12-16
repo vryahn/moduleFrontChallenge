@@ -38,3 +38,4 @@ newPostBtn.addEventListener('click',(e)=>{
   newTag.value="";
 
 });
+
